@@ -1,7 +1,16 @@
 {
   "name": "camera",
   "integrations": {
-    "capacitor": {}
+    "cordova": {},
+    "capacitor": {},
+    "pwa": { "swConfig": "src/pwa-config.js",
+    "defaultIcon": "src/assets/icon.png",
+    "rewrites": [
+      {
+        "source": "/api/(.*)",
+        "destination": "https://api.example.com/$1"
+      }
+    ]}
   },
   "type": "angular"
 }
