@@ -1,19 +1,25 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Timeline</ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <img src="assets/logo.png" alt="FaceTrick Logo" class="logo">
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let post of posts">
-      <ion-thumbnail slot="start">
-        <img [src]="post.photo" alt="Post Image">
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ post.text }}</h2>
-        <p>{{ post.location }}</p>
-      </ion-label>
+  <ion-list class="post-list">
+    <ion-item *ngFor="let post of posts" class="post-item">
+      <div class="post-details">
+        <div class="location">{{ post.location }}</div>
+        <div class="post-image-container">
+          <img [src]="post.photo" alt="Post Image" class="post-image">
+        </div>
+        <div class="post-text">{{ post.text }}</div>
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>
+
